@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Guess Number</string>
+    <string name="textMainDescription">Main description goes here</string>
+    <string name="textSubDescription">Sub description goes here</string>
+    <!-- NOTE: REMOVE NEXT TEXT WHILE RELEASE -->
+    <string name="textResult">Result goes here</string>
+    <string name="textBtnConfirm">Confirm</string>
+    <string name="textBtnNewGame">New Game!</string>
+</resources>
