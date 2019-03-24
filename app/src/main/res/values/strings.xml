@@ -12,4 +12,5 @@
     <string name="textResultSuffix">my number.</string>
     <string name="textResultEqual">equal</string>
     <string name="inputDescription">Input a number to check</string>
+    <string name="textGuessTimes">\nYou guessed a total of %d times</string>
 </resources>

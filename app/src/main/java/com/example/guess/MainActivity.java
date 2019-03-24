@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void compare() {
+        this.guest_times++;
         try {
             int a = Integer.parseInt(this.et_input_num.getText().toString());
             String txtResult = String.format(
@@ -71,11 +72,12 @@ public class MainActivity extends AppCompatActivity {
                     a == MainActivity.randInt ? getString(R.string.textResultEqual) : (a < MainActivity.randInt ? getString(R.string.textResultSmaller): getString(R.string.textResultBigger)),
                     getString(R.string.textResultSuffix)
             );
-            this.txt_result.setText(txtResult);
             if (a == MainActivity.randInt) {
+                txtResult += String.format(getString(R.string.textGuessTimes), this.guest_times);
                 this.btn_confirm.setEnabled(false);
                 this.btn_new_game.setEnabled(true);
             }
+            this.txt_result.setText(txtResult);
         } catch (Exception e){
             throw_err();
             Log.e(MainActivity.mainName, "Throw");
