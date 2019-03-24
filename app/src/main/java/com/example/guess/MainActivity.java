@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     static int randInt = 0;
 
-    public static String mainName = "GuessNumber";
+    public static String mainName = "GuessNumberMain";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void generate_random_int() {
-        MainActivity.randInt = new Random().nextInt(100);
+        MainActivity.randInt = new Random().nextInt(100) + 1;
     }
 
     private void findViews() {
@@ -65,15 +65,16 @@ public class MainActivity extends AppCompatActivity {
     private void compare() {
         try {
             int a = Integer.parseInt(this.et_input_num.getText().toString());
+            String txtResult = String.format(
+                    "%s %s %s",
+                    getString(R.string.textResultPrefix),
+                    a == MainActivity.randInt ? getString(R.string.textResultEqual) : (a < MainActivity.randInt ? getString(R.string.textResultSmaller): getString(R.string.textResultBigger)),
+                    getString(R.string.textResultSuffix)
+            );
+            this.txt_result.setText(txtResult);
             if (a == MainActivity.randInt) {
-                this.txt_result.setText("T");
                 this.btn_confirm.setEnabled(false);
                 this.btn_new_game.setEnabled(true);
-            }
-            else if (a < MainActivity.randInt) {
-                this.txt_result.setText("S");
-            } else {
-                this.txt_result.setText("B");
             }
         } catch (Exception e){
             throw_err();
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         dlgAlert.setMessage("Please input a valid number");
         dlgAlert.setTitle("Exception occurred!");
         //dlgAlert.setPositiveButton("OK", null);
-        dlgAlert.setPositiveButton("Ok",
+        dlgAlert.setPositiveButton("OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //dismiss the dialog

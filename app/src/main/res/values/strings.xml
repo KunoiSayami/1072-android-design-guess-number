@@ -6,4 +6,10 @@
     <string name="textResult">Result goes here</string>
     <string name="textBtnConfirm">Confirm</string>
     <string name="textBtnNewGame">New Game!</string>
+    <string name="textResultPrefix">You guess the number is </string>
+    <string name="textResultBigger">bigger than</string>
+    <string name="textResultSmaller">smaller than</string>
+    <string name="textResultSuffix">my number.</string>
+    <string name="textResultEqual">equal</string>
+    <string name="inputDescription">Input a number to check</string>
 </resources>
